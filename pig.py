@@ -13,7 +13,8 @@ turn = "player"
 winning_score = 50
 
 while not done:
-    while turn == "player" and not done:
+     # Removed the "while not done" condition since it's already being checked at the very start of the program
+    while turn == "player":
         print()
         print("Player:", player_total, "Computer:", comp_total)
         print("It's your turn!")
@@ -35,8 +36,8 @@ while not done:
         if player_total > winning_score:
             print("You win! " + str(player_total) + " to " + str(comp_total))
             done = True
-
-    while turn == "computer" and not done:
+    # Removed the "while not done" condition since it's already being checked at the very start of the program
+    while turn == "computer":
         print()
         print("Player:", player_total, "Computer:", comp_total)
         print("It's the computer's turn!")
