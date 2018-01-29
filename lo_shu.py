@@ -8,6 +8,11 @@ count = 0
 
 is_square = True
 
+#ensures that the amount of numbers entered is correct
+while len(numbers) != 9:
+    print("Please enter 9 numbers!")
+    numbers = (input("Numbers: ")).split()
+    
 for i in range(3):
     for j in range(3):
         square[i][j] = int(numbers[count])
