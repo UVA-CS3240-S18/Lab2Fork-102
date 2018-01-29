@@ -1,4 +1,4 @@
-# Mark Sherriff (mss2x)
+# Arun Kannan (ask9ge)
 
 import math
 import webbrowser
@@ -14,28 +14,37 @@ def distance_between(lat_1, lon_1, lat_2, lon_2):
 
     return dist
 
-#lat = float(input("Current latitude: "))
-#lon = float(input("Current longitude: "))
 
-lat = 38.0322727
-lon = -78.50997339999999
-datafile = open("wendys.csv", "r")
+def main():
+    #lat = float(input("Current latitude: "))
+    #lon = float(input("Current longitude: "))
 
-closest_dist = 200
-closest_wendys = ""
+    lat = 38.0322727
+    lon = -78.50997339999999
+    try:
+        datafile = open("wendys.csv", "r")
+    except Exception:
+        print("Required file 'wendys.csv' not found.")
+        exit()
 
-for line in datafile:
-    entry = line.split(";")
-    dist_to_wendys = distance_between(lat, lon, float(entry[0]), float(entry[1]))
-    if dist_to_wendys < closest_dist:
-        google_maps_url = "https://www.google.com/maps?q=" + str(entry[4]) + "+" + str(entry[5]) + "+" + str(entry[6])
-        print(google_maps_url)
-        closest_dist = dist_to_wendys
-        closest_wendys = entry[2]
+    closest_dist = 200
+    closest_wendys = ""
 
-datafile.close()
+    for line in datafile:
+        entry = line.split(";")
+        dist_to_wendys = distance_between(lat, lon, float(entry[0]), float(entry[1]))
+        if dist_to_wendys < closest_dist:
+            google_maps_url = "https://www.google.com/maps?q=" + str(entry[4]) + "+" + str(entry[5]) + "+" + str(entry[6])
+            print(google_maps_url)
+            closest_dist = dist_to_wendys
+            closest_wendys = entry[2]
 
-print("The closest Wendy's (", closest_wendys, ") is", closest_dist, "miles away.")
-google_maps_url = google_maps_url.replace(' ', '+')
-webbrowser.open(google_maps_url)
+    datafile.close()
 
+    print("The closest Wendy's (", closest_wendys, ") is", closest_dist, "miles away.")
+    google_maps_url = google_maps_url.replace(' ', '+')
+    webbrowser.open(google_maps_url)
+
+
+if __name__ == "__main__":
+    main()
