@@ -14,14 +14,16 @@ for i in range(3):
         count += 1
 # print(square)
 print("You entered:")
-for row in square:
-    print(str(row[0]) + '\t' + str(row[1]) + '\t' + str(row[2]))
-
+msg = ""
 # check rows
 for row in square:
+    print(str(row[0]) + '\t' + str(row[1]) + '\t' + str(row[2]))
     if sum(row) != 15:
         is_square = False
-        print(str(row) + " fails the test!")
+        msg = str(row) + " fails the test!"
+
+if not msg == "":
+    print(msg)
 
 # check cols
 for i in range(3):
