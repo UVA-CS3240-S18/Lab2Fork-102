@@ -4,7 +4,7 @@ import sys
 numbers = (input("Numbers: ")).split()
 
 if len(numbers) != 9:
-    print("Error: input must be 9 space-separated digits.")
+    print("Error: input must be 9 space-separated numbers.")
     sys.exit(0)
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
