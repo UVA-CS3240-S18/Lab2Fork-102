@@ -1,6 +1,9 @@
 # Mark Sherriff (mss2x)
-
-numbers = (input("Numbers: ")).split()
+correct = False;
+while (correct == False):
+    numbers = (input("Please enter 9 numbers: ")).split()
+    if(len(numbers)==9):
+        correct = True
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
 
