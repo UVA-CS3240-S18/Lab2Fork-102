@@ -1,6 +1,12 @@
 # Mark Sherriff (mss2x)
 
-numbers = (input("Numbers: ")).split()
+
+numbers = (input("Numbers \nMust be 9 numbers in the form: l m n o p q r s t\nNo space at the end. Please enter here: ")).split()
+while (len(numbers) != 9):
+    numbers = (input("Needs to be 9 numbers in above form. Please enter here: ")).split()
+
+if not (type(numbers) == float or type(numbers) == int):
+    numbers = (input("Numbers only, and no spaces at the end. Enter here: ")).split()
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
 
