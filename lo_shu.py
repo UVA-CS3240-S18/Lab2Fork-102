@@ -1,6 +1,13 @@
 # Mark Sherriff (mss2x)
 
-numbers = (input("Numbers: ")).split()
+ninenum = False
+
+while(ninenum==False):
+    numbers = (input("Numbers: ")).split()
+    if(len(numbers)!=9):
+        print("please enter 9 numbers")
+    else:
+        ninenum = True
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
 
