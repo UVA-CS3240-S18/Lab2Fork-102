@@ -24,14 +24,33 @@ datafile = open("wendys.csv", "r")
 closest_dist = 200
 closest_wendys = ""
 
+
 for line in datafile:
     entry = line.split(";")
     dist_to_wendys = distance_between(lat, lon, float(entry[0]), float(entry[1]))
     if dist_to_wendys < closest_dist:
-        google_maps_url = "https://www.google.com/maps?q=" + str(entry[4]) + "+" + str(entry[5]) + "+" + str(entry[6])
-        print(google_maps_url)
+        splitaddress = str(entry[4]).split()
+        fulladdress = ""
+        for i in range(len(splitaddress)):
+            if i == 0:
+                fulladdress += splitaddress[i]
+            else:
+                fulladdress += "+" + splitaddress[i]
+        splitcity = str(entry[5]).split()
+        fullcity = ""
+        if len(splitcity) <= 1:
+            fullcity = splitcity[0]
+        else:
+            for i in range(len(splitcity)):
+                if i == 0:
+                    fullcity += splitcity[i]
+                else:
+                    fullcity += "+" + splitcity[i]
+        closeststate=str(entry[6])
         closest_dist = dist_to_wendys
         closest_wendys = entry[2]
+google_maps_url = "https://www.google.com/maps?q=" + fulladdress + "+" + fullcity + "+" + closeststate
+print(google_maps_url)
 
 datafile.close()
 
