@@ -2,7 +2,7 @@
 
 numbers = (input("Numbers: ")).split()
 
-square = [[0,0,0],[0,0,0],[0,0,0]]
+square = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
 count = 0
 
@@ -42,6 +42,3 @@ if not is_square:
     print("This is not a Lo Shu Magic Square!")
 else:
     print("This is a valid Lo Shu Magic Square!")
-
-
-
