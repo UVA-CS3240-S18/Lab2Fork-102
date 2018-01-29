@@ -18,25 +18,26 @@ for row in square:
     print(str(row[0]) + '\t' + str(row[1]) + '\t' + str(row[2]))
 
 # check rows
-for row in square:
-    if sum(row) != 15:
+for i in range(3):
+    if sum(square[i]) != 15:
         is_square = False
-        print(str(row) + " fails the test!")
+        print("Row " + str(i) + " " + str(square[i]) + " fails the test!")
 
 # check cols
 for i in range(3):
     if square[0][i] + square[1][i] + square[2][i] != 15:
         is_square = False
-        print("Column " + str(i) + " fails the test!")
+        t_square = list(map(list, zip(*square)))
+        print("Column " + str(i) + " " + str(t_square[i]) +  " fails the test!")
 
 # check diagonals
 if square[0][0] + square[1][1] + square[2][2] != 15:
     is_square = False
-    print("Left->Right diagonal fails the test!")
+    print("Left->Right diagonal [" + str(square[0][0]) + ", " + str(square[1][1]) + ", " + str(square[2][2]) + "] fails the test!")
 
 if square[0][2] + square[1][1] + square[2][0] != 15:
     is_square = False
-    print("Right->Left diagonal fails the test!")
+    print("Right->Left diagonal [" + str(square[0][2]) + ", " + str(square[1][1]) + ", " + str(square[2][0]) + "] fails the test!")
 
 if not is_square:
     print("This is not a Lo Shu Magic Square!")
