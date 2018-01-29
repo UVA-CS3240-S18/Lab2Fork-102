@@ -1,16 +1,14 @@
 # Mark Sherriff (mss2x)
+# edited by Michael Wu (mvw5mf)
 
 import random
 
 print("Welcome to Pig!")
 
 done = False
-player_temp_total = 0
-player_total = 0
-comp_temp_total = 0
-comp_total = 0
+player_temp_total, comp_temp_total, player_total, comp_total= 0, 0, 0, 0
 turn = "player"
-winning_score = 50
+winning_score = 25
 
 while not done:
     while turn == "player" and not done:
@@ -30,7 +28,7 @@ while not done:
             if choice == 'n':
                 player_total += player_temp_total
                 player_temp_total = 0
-                print("Your total socre is now:", player_total)
+                print("Your total score is now:", player_total)
                 turn = "computer"
         if player_total > winning_score:
             print("You win! " + str(player_total) + " to " + str(comp_total))
