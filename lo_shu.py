@@ -1,5 +1,6 @@
 # Mark Sherriff (mss2x)
 
+print("Please input 9 numbers separated by spaces to make the the square")
 numbers = (input("Numbers: ")).split()
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
