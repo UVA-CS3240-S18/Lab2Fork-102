@@ -1,5 +1,8 @@
 # Mark Sherriff (mss2x)
 
+# input must be in a very specific format, but doesn't tell the user, so I will tell them!
+print("Please enter 9 numbers in the form '0 0 0 0 0 0 0 0 0'")
+
 numbers = (input("Numbers: ")).split()
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
