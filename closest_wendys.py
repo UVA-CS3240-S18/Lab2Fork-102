@@ -8,7 +8,7 @@ google_maps_url = "https://www.google.com/maps/@35.372742,-81.954957,15z?hl=en"
 
 def distance_between(lat_1, lon_1, lat_2, lon_2):
     theta = lon_1 - lon_2
-    radian = math.pi / 180.0 #added this!
+    radian = math.pi / 180.0  # added this!
     dist = math.sin(lat_1 * radian) * math.sin(lat_2 * radian) + math.cos(
         lat_1 * radian) * math.cos(lat_2 * radian) * math.cos(theta * radian)
     dist = math.acos(dist)
