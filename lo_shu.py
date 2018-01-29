@@ -1,16 +1,21 @@
 # Mark Sherriff (mss2x)
 
-numbers = (input("Numbers: ")).split()
+numbers = (input("Numbers (enter your input separated by spaces): ")).split()
+#improvement, made input more clear
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
 
 count = 0
+diag1sum = 0
+#improvement, removes need to calculate this later
 
 is_square = True
 
 for i in range(3):
     for j in range(3):
         square[i][j] = int(numbers[count])
+        if i ==j:
+            diag1sum+=int(numbers[count])
         count += 1
 # print(square)
 print("You entered:")
@@ -30,7 +35,8 @@ for i in range(3):
         print("Column " + str(i) + " fails the test!")
 
 # check diagonals
-if square[0][0] + square[1][1] + square[2][2] != 15:
+
+if diag1sum != 15:
     is_square = False
     print("Left->Right diagonal fails the test!")
 
@@ -42,6 +48,3 @@ if not is_square:
     print("This is not a Lo Shu Magic Square!")
 else:
     print("This is a valid Lo Shu Magic Square!")
-
-
-
