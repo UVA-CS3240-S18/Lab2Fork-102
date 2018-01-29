@@ -1,4 +1,5 @@
 # Mark Sherriff (mss2x)
+# edited by Michael Wu (mvw5mf)
 
 import math
 import webbrowser
@@ -35,7 +36,7 @@ for line in datafile:
 
 datafile.close()
 
-print("The closest Wendy's (", closest_wendys, ") is", closest_dist, "miles away.")
+print("The closest Wendy's (", "{0:.2f}".format(closest_wendys), ") is", closest_dist, "miles away.")
 google_maps_url = google_maps_url.replace(' ', '+')
 webbrowser.open(google_maps_url)
 
