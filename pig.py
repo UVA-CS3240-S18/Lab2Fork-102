@@ -1,6 +1,11 @@
-# Mark Sherriff (mss2x)
+# Mark Sherriff (mss2x) edited by Danial Hussain (dh4dt)
 
 import random
+
+def print_game_status(turn, player_total, comp_total):
+    print()
+    print("Player:", player_total, "Computer:", comp_total)
+    print("It's the " + turn + "'s turn!")
 
 print("Welcome to Pig!")
 
@@ -14,9 +19,7 @@ winning_score = 50
 
 while not done:
     while turn == "player" and not done:
-        print()
-        print("Player:", player_total, "Computer:", comp_total)
-        print("It's your turn!")
+        print_game_status(turn, player_total, comp_total)
         roll = random.randint(1,6)
         print("You rolled a", roll)
         if roll == 1:
@@ -30,16 +33,14 @@ while not done:
             if choice == 'n':
                 player_total += player_temp_total
                 player_temp_total = 0
-                print("Your total socre is now:", player_total)
+                print("Your total score is now:", player_total)
                 turn = "computer"
         if player_total > winning_score:
             print("You win! " + str(player_total) + " to " + str(comp_total))
             done = True
 
     while turn == "computer" and not done:
-        print()
-        print("Player:", player_total, "Computer:", comp_total)
-        print("It's the computer's turn!")
+        print_game_status(turn, player_total, comp_total)
         roll = random.randint(1,6)
         print("The computer rolled a", roll)
         if roll == 1:
