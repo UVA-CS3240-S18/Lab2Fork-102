@@ -19,8 +19,12 @@ def distance_between(lat_1, lon_1, lat_2, lon_2):
 
 lat = 38.0322727
 lon = -78.50997339999999
-datafile = open("wendys.csv", "r")
 
+try:
+    datafile = open("wendys.csv", "r")
+except OSError:
+    raise OSError("Could not find wendys.csv file")
+    
 closest_dist = 200
 closest_wendys = ""
 
