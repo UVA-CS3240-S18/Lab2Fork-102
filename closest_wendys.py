@@ -21,7 +21,7 @@ lat = 38.0322727
 lon = -78.50997339999999
 datafile = open("wendys.csv", "r")
 
-closest_dist = 200
+closest_dist = 100 #made the starting number smaller because most Wendy's are within 10 miles of a neighborhood.
 closest_wendys = ""
 
 for line in datafile:
@@ -35,7 +35,8 @@ for line in datafile:
 
 datafile.close()
 
-print("The closest Wendy's (", closest_wendys, ") is", closest_dist, "miles away.")
+print("The closest Wendy's (", closest_wendys, ") from your current location (", lat, lon, ") is", closest_dist, "miles away.")
+#added the current location for error checking purposes
 google_maps_url = google_maps_url.replace(' ', '+')
 webbrowser.open(google_maps_url)
 
