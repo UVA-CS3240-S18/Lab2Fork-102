@@ -2,7 +2,7 @@
 
 import random
 
-print("Welcome to Pig!")
+print("Welcome to Pig, enjoy the game!")
 
 done = False
 player_temp_total = 0
