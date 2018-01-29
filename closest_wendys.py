@@ -17,8 +17,13 @@ def distance_between(lat_1, lon_1, lat_2, lon_2):
 #lat = float(input("Current latitude: "))
 #lon = float(input("Current longitude: "))
 
-lat = 38.0322727
-lon = -78.50997339999999
+#lat = 38.0322727
+#lon = -78.50997339999999
+
+#making a change so that I actually push a branch and do a pull request, and not push straight to master
+
+lat = float(input("Enter your latitude: "))
+lon = float(input("Enter your longitude: "))
 datafile = open("wendys.csv", "r")
 
 closest_dist = 200
