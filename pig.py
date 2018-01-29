@@ -6,12 +6,9 @@ import random
 print("Welcome to Pig!")
 
 done = False
-player_temp_total = 0
-player_total = 0
-comp_temp_total = 0
-comp_total = 0
+player_temp_total, comp_temp_total, player_total, comp_total= 0, 0, 0, 0
 turn = "player"
-winning_score = 50
+winning_score = 25
 
 while not done:
     while turn == "player" and not done:
