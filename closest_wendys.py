@@ -5,9 +5,14 @@ import webbrowser
 
 google_maps_url = "https://www.google.com/maps/@35.372742,-81.954957,15z?hl=en"
 
+
+def radian(val)
+    return (val * math.pi / 180.0)
+
+
 def distance_between(lat_1, lon_1, lat_2, lon_2):
     theta = lon_1 - lon_2
-    dist = math.sin(lat_1 * math.pi / 180.0) * math.sin(lat_2 * math.pi / 180.0) + math.cos(lat_1 * math.pi / 180.0) * math.cos(lat_2 * math.pi / 180.0) * math.cos(theta * math.pi / 180.0)
+    dist = math.sin(radian(lat_1)) * math.sin(radian(lat_2)) + math.cos(radian(lat_1)) * math.cos(radian(lat_2)) * math.cos(radian(theta))
     dist = math.acos(dist)
     dist = dist * 180.0 / math.pi
     dist = dist * 60 * 1.1515
