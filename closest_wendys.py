@@ -21,7 +21,7 @@ lat = 38.0322727
 lon = -78.50997339999999
 datafile = open("wendys.csv", "r")
 
-closest_dist = 350
+closest_dist = 350 #edited to reveal the nearest wendy's within range for a Tesla Model 3
 closest_wendys = ""
 
 for line in datafile:
