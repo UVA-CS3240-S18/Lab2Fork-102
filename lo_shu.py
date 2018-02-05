@@ -1,17 +1,16 @@
 # Mark Sherriff (mss2x)
 
-numbers = (input("Numbers: ")).split()
+numbers = (input("Enter 9 numbers: ")).split()
 
 square = [[0,0,0],[0,0,0],[0,0,0]]
 
-count = 0
+count = 9
 
 is_square = True
 
 for i in range(3):
     for j in range(3):
         square[i][j] = int(numbers[count])
-        count += 1
 # print(square)
 print("You entered:")
 for row in square:
